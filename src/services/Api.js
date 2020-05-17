@@ -34,9 +34,10 @@ async function createUser(data) {
         };
 
         const create = await fetch(URL, options);
+        const response = await create.json();
         return create.status === 201 && {
             status: create.status,
-            data: create.json()
+            data: response
         };
 
     } catch (error) {
@@ -51,9 +52,11 @@ async function removeUser(id) {
         };
 
         const remove = await fetch(`${URL}/${id}`, options);
+        const response = await remove.json();
+
         return remove.status === 200 && {
             status: remove.status,
-            data: remove.json()
+            data: response
         };
 
     } catch (error) {

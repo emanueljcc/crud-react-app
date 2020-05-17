@@ -19,6 +19,8 @@ function App() {
     const [openAlerts, setOpenAlerts] =  useState(defaultValue);
     const [rowUpdate, setRowUpdate] = useState({});
 
+    // console.log(users)
+
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />

@@ -71,10 +71,13 @@ export default function Form({ setOpenModal, setOpenAlerts, rowUpdate, setRowUpd
     const create = async () => {
         try {
             const response = await createUser(formData);
+
+            const { data } = response.data;
+
             if (response.status === 201) {
                 setUsers([
                     ...users,
-                    formData
+                    data
                 ]);
 
                 setOpenModal(false);

@@ -36,14 +36,18 @@ function TableList({ setOpenAlerts, setOpenModal, rowUpdate, setRowUpdate }) {
 
     const { users, setUsers } = useApp();
 
-    const remove = (id) => {
-        removeUser(id);
+    const remove = async (id) => {
+        try {
+            const arrUsers = users.filter(user => user._id !== id);
 
-        const arrUsers = users.filter(user => user._id !== id);
+            setUsers(arrUsers);
 
-        setUsers(arrUsers);
+            await removeUser(id);
 
-        setOpenAlerts({ open: true, msg: "User Delete Successful", type: "success" });
+            setOpenAlerts({ open: true, msg: "User Delete Successful", type: "success" });
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     const update = (data) => {
