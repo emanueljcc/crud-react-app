@@ -13,7 +13,7 @@
 
 
 
-## Steps to deploy the API
+## Steps to deploy the API:
 
 
 
@@ -23,4 +23,4 @@
 2.  `npm run dev` ó `yarn dev`
 3.  Ready...
 
-## Important: leave the .env and .env.example file for environment variables for easy deployment...
+## Important: leave the .env and .env.example file for environment variables for easy deployment.
